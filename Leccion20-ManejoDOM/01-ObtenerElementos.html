@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo DOM en JS</title>
+        <style>
+            .azul {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>  
+        <h1 class="azul" id="cabezera">Ejemplo con DOM en JS</h1>
+        <p id="parrafo">Saludos!</p>
+        <p class="azul" id="segundoParrafo">Saludos otra vez!</p>
+
+        <script>
+            /**
+             * Aquí va el código en JS.
+             * 
+             * Es recomendable colocar las etiquetas script 
+             * después de los elementos a los cuales queremos acceder. 
+            */
+            console.log("Saludos desde JS");
+
+            // Obtener un elemento HTML por el identificador
+            const cabezera = document.getElementById("cabezera");
+            const parrafo = document.getElementById("parrafo");
+            
+            // Obtener el texto dentro del objeto h1 y p
+            console.log(`h1: ${cabezera.innerHTML}`);
+            console.log(`p: ${parrafo.innerHTML}`);
+
+            // Modificar el los valores de los objetos DOM
+            cabezera.innerHTML = "Texto cambiado desde JS";
+            parrafo.innerHTML = "Hola, modifique este texto desde las etiquetas script";
+            
+            // Obtener los elementos por la etiqueta HTML
+            // Devolverá un arreglo de elementos 
+            const parrafos = document.getElementsByTagName("p");
+            console.log(`No de parrafos dentro del HTML: ${parrafos.length}`);
+            for (const p of parrafos)
+                console.log(`Valor de p: ${p.innerHTML}`);
+
+            // Obtener los elementos por la clase
+            const azules = document.getElementsByClassName("azul");
+            console.log(`Elementos con la clase azul: ${azules.length}`);
+            for (const a of azules)
+                console.log(`Valor del elemento azul: ${a.innerHTML}`);
+
+            // Obtener por selector
+            // Obtener todos los parrafos que tengan la clase azul
+            const parrafosAzules = document.querySelectorAll("p.azul");
+            console.log(`Parrafos con la clase azul: ${parrafosAzules.length}`);
+            for (const a of parrafosAzules)
+                console.log(`Valor del elemento azul: ${a.innerHTML}`);
+        </script>   
+    </body>
+</html>

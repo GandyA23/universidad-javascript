@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Manejo DOM con JS</title>
+    </head>
+    <body>
+        <h1 id="cabezera">Manejo DOM con JS</h1>
+        <button onclick="borrarTodo()">Eliminar todo</button>
+        <br><br>
+        <img id="imagen" src="./javascript.png" alt="Logo de JavaScript">
+        <br><br>
+        <button onclick="cambiarImagen()">Cambiar Imagen</button>
+        <br><br>
+        <button onclick="cambiarColor()">Cambiar color</button>
+        <br><br>
+        <script>
+            let banderaImagen = true;
+            let banderaColor = true;
+
+            // Uso de document.write
+            // Coloca directamente la información
+            document.write("Saludos desde JS");
+
+            // Cuidado, es posible que document.write elimine toda la información de la página
+            function borrarTodo () {
+                document.write("Se ha eliminado todo");
+            }
+
+            // Cambiar el valor de las propiedades
+            function cambiarImagen () {
+                const imagen = document.getElementById("imagen");
+                imagen.src = banderaImagen ? "./html5.png" : "./javascript.png";
+                banderaImagen = !banderaImagen;
+            }
+
+            // Cambiar el estilo de un elemento html
+            function cambiarColor () {
+                const cabezera = document.getElementById("cabezera");
+                cabezera.style.color = banderaColor ? "blue" : "black";
+                banderaColor = !banderaColor;
+            }
+        </script>
+    </body>
+</html>
