@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos DOM</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo DOM con JavaScript</h1>
+    <!-- Es posible añadir eventos desde js con addEventListener -->
+    <form id="form">
+        nombre: <input type="text" id="nombre" />
+        <br /> <br />
+        apellido: <input type="text" id="apellido" />
+    </form>
+</body>
+<script>
+    // Es posible añadir eventos desde js con addEventListener
+    // Se quita el prefijo "on" que se pone en las etiquetas HTML
+    // Manera en la que se le asigna a elemento por elemento
+    // document.getElementById("nombre").addEventListener("focus", cambiar);
+    // document.getElementById("nombre").addEventListener("blur", cambiar);
+    // document.getElementById("apellido").addEventListener("focus", cambiar);
+    // document.getElementById("apellido").addEventListener("blur", cambiar);
+
+    // Recupera todos los elementos y les asigna el evento blur y focus
+    const form = document.getElementById("form");
+    
+    // Delegación de eventos
+    // El último parámetro es para que el evento se coloquen en los hijos también
+    form.addEventListener("focus", cambiar, true);
+    form.addEventListener("blur", cambiar, true);
+
+    // Cambia el color dependiendo si tiene el foco o el blur
+    function cambiar(evento) {
+        // Regresa el elemento del evento
+        evento.target.style.background = evento.target.style.background == "yellow" ? "white" : "yellow";
+    }
+</script>
+</html>

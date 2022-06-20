@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos DOM</title>
+</head>
+<!-- El evento onload se ejecuta cuando termina de ejecutar la página -->
+<body onload="entrar()">
+    <!-- Es posible poner directamente el código en JS en el atributo onclick -->
+    <!-- Aunque no es muy recomendado -->
+    <!-- <h1 onclick="this.innerHTML = 'Título modificado con onclick'">Manejo DOM con JavaScript</h1> -->
+    <h1 onclick="cambiarTexto(this)">Manejo DOM con JavaScript</h1>
+    <h1 id="titulo">Manejo DOM con JavaScript con Id</h1>
+    <button onclick="mostrar()">Mostrar</button>
+</body>
+<script>
+    function cambiarTexto(obj) {
+        console.log(obj);
+        console.log(obj.innerHTML);
+        obj.innerHTML = "Nuevo título modificado con onclick"
+        console.log(obj.innerHTML);
+    }
+
+    // Es posible asociar eventos desde JS
+    // Se le asigna una función callback
+    document.getElementById("titulo").onclick = cambiarTexto2;
+
+    function cambiarTexto2() {
+        document.getElementById("titulo").innerHTML = "Modificado desde Js";
+    }
+
+    function entrar() {
+        alert("Esta accediendo a la página web");
+        let texto = '';
+
+        // Cuando entra a la página, verifica si las cookies estan habilitadas.
+        if (navigator.cookieEnabled) {
+            texto = "Las cookies estan habilitadas";
+        } else {
+            texto = "Las cookies no estan habilitadas";
+        }
+        console.log(texto);
+    }
+</script>
+</html>

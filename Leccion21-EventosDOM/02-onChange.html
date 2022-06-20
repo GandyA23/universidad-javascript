@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos DOM</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo DOM con JavaScript</h1>
+    <br />
+    <!-- Se usa tipicamente en los campos de texto de un formulario -->
+    <!-- El evento se ejecuta cuando el valor input después de tener cambios -->
+    Nombre: <input type="text" id="nombre" onchange="convertir(this)" />
+</body>
+<script>
+    function convertir(input) {
+        input.value = input.value.toUpperCase(); 
+    }
+</script>
+</html>

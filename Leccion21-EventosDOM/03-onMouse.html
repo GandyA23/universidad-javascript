@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos DOM</title>
+</head>
+<body>
+    <!-- onmouseover: Cuando el mouse pasa en cima del elemento, entonces se ejecutará la función -->
+    <!-- onmouseout: Cuando el mouse deja de estar encima del elemento, entonces se ejecutará la función -->
+    <h1 onmouseover="rojo(this)" onmouseout="azul(this)">Manejo DOM con JavaScript</h1>
+
+    <!-- onmousedown: Cuando el mouse deja el click al elemento, entonces se ejecutará la función -->
+    <!-- onmouseup: Cuando el mouse suelta el click al elemento, entonces se ejecutará la función -->
+    <h1 onmousedown="rojo(this)" onmouseup="azul(this)">Manejo DOM con JavaScript</h1>
+</body>
+<script>
+    function rojo(obj) {
+        obj.style.color = "red";
+    }
+
+    function azul(obj) {
+        obj.style.color = "blue";
+    }
+</script>
+</html>

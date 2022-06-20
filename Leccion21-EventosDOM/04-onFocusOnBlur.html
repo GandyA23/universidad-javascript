@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos DOM</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo DOM con JavaScript</h1>
+    <!-- onfocus: cuando se le da click a un elemento, quiere decir que tiene la atención -->
+    <!-- onblur: cuando se le da click a otro elemento, quiere decir que perdio la atención -->
+    nombre: <input type="text" id="nombre" onfocus="cambiar(this)" onblur="cambiar(this)" />
+    <br /> <br />
+    apellido: <input type="text" id="apellido" onfocus="cambiar(this)" onblur="cambiar(this)" />
+</body>
+<script>
+    // Cambia el color dependiendo si tiene el foco o el blur
+    function cambiar(input) {
+        input.style.background = input.style.background == "yellow" ? "white" : "yellow";
+    }
+</script>
+</html>
