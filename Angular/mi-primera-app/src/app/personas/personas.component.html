@@ -1,7 +1,29 @@
-<h1>Listado de personas</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Listado de personas</h1>
+      <!--
+        Property Binding: en disabled se le asigna el valor que se encuentra en el archivo ts.
+        La propiedad se coloca entre corchetes.
 
-<!-- Muchos llamados de un mismo componente -->
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
+        Event Binding: El método de agregarPersona, se encuentra en el archivo persona.component.ts.
+        El evento se coloca entre paréntesis para capturarlo.
+      -->
+      <button class="btn btn-primary" [disabled]="disabled" (click)="agregarPersona()">Agregar persona</button>
+      <p>{{ mensaje }}</p>
+
+      <!-- Muchos llamados de un mismo componente -->
+      <app-persona></app-persona>
+
+      <label>Título Persona</label>
+      <!--
+      Forma para el Event Binding
+      <input type="text" class="form-control" (input)="modificarTitulo($event)"> -->
+
+      <!-- Two-Way Binding form: El valor cambia tanto en la plantilla, como en la clase de TypeScript -->
+      <input type="text" class="form-control" [(ngModel)]="titulo"> -->
+
+      {{ titulo }}
+    </div>
+  </div>
+</div>

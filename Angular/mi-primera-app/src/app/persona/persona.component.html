@@ -1,1 +1,9 @@
-<p>persona works!</p>
+<p>Nombre: {{ nombre }}</p>
+<p>Apellido: {{ apellido }}</p>
+<p>Edad: {{ edad }}</p>
+
+<div (keyup)="0">
+  <!-- Es posible obtener el valor de los objetos input -->
+  <input #entrada />
+  {{ entrada.value }}
+</div>

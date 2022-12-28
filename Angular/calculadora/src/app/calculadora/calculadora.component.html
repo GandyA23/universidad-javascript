@@ -1,0 +1,25 @@
+<div class="container">
+  <h1> Applicación de calculadora </h1>
+
+  <div class="mb-3">
+    <label for="n1" class="form-label">Número 1: </label>
+    <input id="n1" type="number" class="form-control" #n1>
+  </div>
+
+  <div class="mb-3">
+    <label for="n2" class="form-label">Número 2: </label>
+    <input id="n2" type="number" class="form-control" #n2>
+  </div>
+
+  <div class="mb-3 text-center">
+    <button class="btn btn-primary mx-2 my-2" (click)="calculate(n1.valueAsNumber, n2.valueAsNumber, '+')" >Sumar +</button>
+    <button class="btn btn-primary mx-2 my-2" (click)="calculate(n1.valueAsNumber, n2.valueAsNumber, '-')" >Resta -</button>
+    <button class="btn btn-primary mx-2 my-2" (click)="calculate(n1.valueAsNumber, n2.valueAsNumber, '*')" >Multiplicación *</button>
+    <button class="btn btn-primary mx-2 my-2" (click)="calculate(n1.valueAsNumber, n2.valueAsNumber, '/')" >División /</button>
+  </div>
+
+  <div class="mb-3">
+    <h5>Resultado:</h5>
+    <h6 [class]="classResult">{{ resultado }}</h6>
+  </div>
+</div>
